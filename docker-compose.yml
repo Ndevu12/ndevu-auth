@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  supertokens:
+    image: registry.supertokens.io/supertokens/supertokens-postgresql
+    container_name: supertokens-postgresql
+    ports:
+      - "3567:3567"
+    environment:
+      - POSTGRESQL_CONNECTION_URI=postgresql://supertokens:supertokens@postgres:5432/supertokens
+      - ACCOUNT_LINKING_FEATURE=ENABLED
+      - SUPERTOKENS_CORE_CONFIG='
+        {
+          "accountLinkingFeature": {
+            "enabled": true
+          }
+        }'
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16.0-bookworm
+    container_name: supertokens-postgres
+    environment:
+      - POSTGRES_USER=supertokens
+      - POSTGRES_PASSWORD=supertokens
+      - POSTGRES_DB=supertokens
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
