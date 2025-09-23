@@ -11,6 +11,7 @@ backend/.pytest_cache/
 .env.development.local
 .env.test.local
 .env.production.local
+.cursor/
 
 # IDE
 .vscode/
@@ -100,3 +101,6 @@ celerybeat.pid
 .mypy_cache/
 .dmypy.json
 dmypy.json
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
