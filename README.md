@@ -78,11 +78,11 @@ docker ps
 ## 🔐 OAuth Providers
 
 ### Google OAuth
-- **Client ID**: `1060725074195-kmeum4crr01uirfl2op9kd5acmi9jutn.apps.googleusercontent.com`
+- **Client ID**: ``
 - **Redirect URI**: `http://localhost:3000/auth/callback/google`
 
 ### Apple OAuth
-- **Client ID**: `4398792-io.supertokens.example.service`
+- **Client ID**: 
 - **Redirect URI**: `http://localhost:3000/auth/callback/apple`
 
 ## 🧪 Testing OAuth
